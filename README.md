@@ -1,2 +1,2 @@
 # anchor-harvester
-主播收割机
+主播收割器
