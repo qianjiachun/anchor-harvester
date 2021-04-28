@@ -3,7 +3,7 @@ import {IUserModule} from "@/store/modules/user/interface"
 import RootStateTypes from "@/store/interface"
 
 const user: Module<IUserModule, RootStateTypes> = {
-    namespaced: process.env.NODE_ENV !== "production",
+    namespaced: true,
     state: {
         id: "",
         uid: "",
