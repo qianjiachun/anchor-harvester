@@ -31,7 +31,11 @@ export default defineConfig(
     server: {
       port: 7874,
       proxy: {
-        // '/lsbdb': 'http://10.192.195.96:8087',
+        // '/api': {
+        //   target: "",
+        //   changeOrigin: true,
+        //   rewrite: (path) => path.replace(/^\/api/, '')
+        // }
       },
       hmr: {
         overlay: true,

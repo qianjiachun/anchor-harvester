@@ -1,19 +1,19 @@
-import { createStore } from 'vuex';
+import { createStore, Store, useStore as baseUseStore } from 'vuex'
+import {InjectionKey} from "vue"
+import RootStateTypes, {AllStateTypes} from "@/store/interface"
 
-export default createStore({
-  state() {
-    return {
-    //   count: 0,
-    };
-  },
-  mutations: {
-    // increment(state: any) {
-    //   state.count++;
-    // },
-  },
-  actions: {
-    // increment(context) {
-    //   context.commit('increment');
-    // },
-  },
+// 引入子模块
+import user from "@/store/modules/user"
+
+export default createStore<RootStateTypes>({
+  modules: {
+    user
+  }
 });
+
+export const key: InjectionKey<Store<RootStateTypes>> = Symbol("vue-store")
+
+
+export function useStore<T = AllStateTypes>() {
+  return baseUseStore<T>(key);
+}
