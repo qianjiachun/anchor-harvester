@@ -4,6 +4,8 @@ import store, {key} from "./store"
 import App from '@/App'
 import element from "./plugins/element-plus"
 
+import "./styles/index.scss"
+
 let app = createApp(App)
 element(app)
 app.use(router).use(store, key).mount("#app")

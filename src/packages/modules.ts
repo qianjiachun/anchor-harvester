@@ -1,5 +1,9 @@
-import login from "./login"
+import huya from "./huya"
+import douyu from "./douyu"
+import qie from "./qie"
 
 export default [
-    login
+    huya,
+    douyu,
+    qie
 ]

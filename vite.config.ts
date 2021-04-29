@@ -29,7 +29,7 @@ export default defineConfig(
       })
     ],
     server: {
-      port: 7874,
+      port: 1015,
       proxy: {
         // '/api': {
         //   target: "",

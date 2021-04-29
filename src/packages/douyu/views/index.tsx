@@ -1,5 +1,6 @@
 import {defineComponent, onMounted, ref, watch} from 'vue'
 import {useStore} from "@/store"
+import styles from "../styles/index.module.scss"
 
 export default defineComponent({
     name: 'name',
@@ -11,18 +12,9 @@ export default defineComponent({
         watch(var1, (n, o) => {})
         onMounted(() => {
         })
-
-        const l = () => {
-            store.commit("user/SET_TOKEN","无外乎");
-        }
-        
-        
         return () => (
             <>
-                <div class="main">
-                    {store.state.user.token}
-                    <el-button onClick={l}>哈哈</el-button>
-                </div>
+                斗鱼
             </>
         )
     }
