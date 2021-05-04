@@ -1,20 +1,16 @@
 import {defineComponent, onMounted, ref, watch} from 'vue'
-import {useStore} from "@/store"
-import styles from "../styles/index.module.scss"
+import styles from "../styles/header.module.scss"
 
 export default defineComponent({
     name: 'name',
     props: [],
     emits: [],
     setup(props, ctx) {
-        const store = useStore();
-        let var1 = ref(1);
-        watch(var1, (n, o) => {})
-        onMounted(() => {
-        })
         return () => (
             <>
-                企鹅
+                <div class={styles.header}>
+                    <div>主播收割器</div>
+                </div>
             </>
         )
     }

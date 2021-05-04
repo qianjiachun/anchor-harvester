@@ -1,5 +1,6 @@
-import { RouteRecordRaw, createRouter, createWebHistory } from 'vue-router';
+import { RouteRecordRaw, createRouter, createWebHistory, createWebHashHistory } from 'vue-router';
 import packages from "../packages"
+import HelloWorld from "@/components/HelloWorld.vue"
 
 // const routes: RouteRecordRaw[] = [
 //   {
@@ -13,12 +14,22 @@ import packages from "../packages"
 // //     component: () => import('/@/views/Login'),
 // //   },
 // ];
-let routes: RouteRecordRaw[] = [];
+let routes: RouteRecordRaw[] = [
+  {
+    path: "/",
+    redirect: "/douyu",
+  },
+  // 404
+  {
+    path: '/:path(.*)*',
+    redirect: "/"
+  },
+];
 packages.modules.forEach(item => {
     routes = routes.concat(...item.routes);
 })
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes,
 });
 export default router;

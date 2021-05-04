@@ -1,8 +1,16 @@
+import Layout from "@/layout/index"
 export const routes = [
     {
         path: '/douyu',
-        name: 'douyu',
+        component: Layout,
         meta: {title: "斗鱼"},
-        component: () => import('../views/index'),
+        redirect: "/douyu",
+        children: [
+            {
+                path: "",
+                component: () => import("../views/index"),
+            },
+            
+        ]
     }
 ]

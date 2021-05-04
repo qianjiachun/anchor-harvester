@@ -14,11 +14,7 @@ export default defineComponent({
         })
         return () => (
             <>
-                <div class={styles.wrap}>
-                    <el-card style="width:350px;" header="主播收割器">
-                        
-                    </el-card>
-                </div>
+                虎牙
             </>
         )
     }
