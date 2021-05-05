@@ -26,6 +26,7 @@ export default defineComponent({
           }]); 
         return () => (
             <>
+                <el-button type="primary">新增任务</el-button>
                 <el-table data={tableData.value} stripe style="width: 100%">
                     <el-table-column
                         prop="date"
