@@ -24,6 +24,18 @@ export default defineComponent({
             name: '王小虎',
             address: '上海市普陀区金沙江路 1516 弄'
           }]); 
+
+        let scopedSlots = {
+            scope: () => {
+                return <span>哈哈</span>
+            }
+        };
+
+        const renderOperation = (prop: any) => {
+            return (
+                <div>Haha</div>
+            )
+        }
         return () => (
             <>
                 <el-button type="primary">新增任务</el-button>
@@ -41,6 +53,13 @@ export default defineComponent({
                     <el-table-column
                         prop="address"
                         label="地址">
+                    </el-table-column>
+                    <el-table-column
+                    fixed="right"
+                    label="操作"
+                    width="180"
+                    >
+                        <el-button size="mini" >编辑</el-button>
                     </el-table-column>
                 </el-table>
             </>
