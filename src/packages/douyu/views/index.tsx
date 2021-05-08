@@ -1,6 +1,7 @@
 import { defineComponent, onMounted, ref, watch } from 'vue'
 import { useStore } from "@/store"
 import styles from "../styles/index.module.scss"
+import {getTaskList} from "../apis"
 
 export default defineComponent({
     name: 'name',
@@ -25,41 +26,25 @@ export default defineComponent({
             address: '上海市普陀区金沙江路 1516 弄'
           }]); 
 
-        let scopedSlots = {
-            scope: () => {
-                return <span>哈哈</span>
-            }
-        };
+        onMounted(() => {
+            getTaskList().then(ret => {
+                if (ret.data.error == 0) {
+                    tableData.value = ret.data.data;
+                }
+            })
+        })
 
-        const renderOperation = (prop: any) => {
-            return (
-                <div>Haha</div>
-            )
-        }
         return () => (
             <>
-                <el-button type="primary">新增任务</el-button>
+                <el-button style="margin-bottom:15px;" type="primary">新增任务</el-button>
                 <el-table data={tableData.value} stripe style="width: 100%">
-                    <el-table-column
-                        prop="date"
-                        label="日期"
-                        width="180">
-                    </el-table-column>
-                    <el-table-column
-                        prop="name"
-                        label="姓名"
-                        width="180">
-                    </el-table-column>
-                    <el-table-column
-                        prop="address"
-                        label="地址">
-                    </el-table-column>
-                    <el-table-column
-                    fixed="right"
-                    label="操作"
-                    width="180"
-                    >
-                        <el-button size="mini" >编辑</el-button>
+                    <el-table-column prop="zone1" label="分区1"></el-table-column>
+                    <el-table-column prop="zone2" label="分区2"></el-table-column>
+                    <el-table-column sortable prop="anchor_num" label="未入会主播数"></el-table-column>
+                    <el-table-column sortable prop="update_time" label="最后更新时间"></el-table-column>
+                    <el-table-column fixed="right" label="操作" min-width="160">
+                        <el-button type="primary" size="mini">查看</el-button>
+                        <el-button type="danger" size="mini">删除</el-button>
                     </el-table-column>
                 </el-table>
             </>
