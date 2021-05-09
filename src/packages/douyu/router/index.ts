@@ -8,9 +8,14 @@ export const routes = [
         children: [
             {
                 path: "",
+                name: "index",
                 component: () => import("../views/index"),
             },
-            
+            {
+                path: "list",
+                name: "list",
+                component: () => import("../views/list"),
+            },
         ]
     }
 ]

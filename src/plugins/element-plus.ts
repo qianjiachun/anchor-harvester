@@ -1,6 +1,12 @@
 // 如果要使用.scss样式文件，则需要引入base.scss文件
 import 'element-plus/packages/theme-chalk/src/base.scss'
 
+// 使用中文
+import { locale } from "element-plus"
+import lang from 'element-plus/lib/locale/lang/zh-cn'
+import 'dayjs/locale/zh-cn'
+locale(lang)
+
 import {
   // ElAlert,
   ElAside,
@@ -28,7 +34,7 @@ import {
   // ElColorPicker,
   ElContainer,
   // ElDatePicker,
-  // ElDialog,
+  ElDialog,
   // ElDivider,
   // ElDrawer,
   // ElDropdown,
@@ -47,10 +53,10 @@ import {
   ElMenu,
   ElMenuItem,
   ElMenuItemGroup,
-  // ElOption,
+  ElOption,
   // ElOptionGroup,
   // ElPageHeader,
-  // ElPagination,
+  ElPagination,
   // ElPopconfirm,
   // ElPopover,
   ElPopper,
@@ -61,7 +67,7 @@ import {
   // ElRate,
   ElRow,
   // ElScrollbar,
-  // ElSelect,
+  ElSelect,
   // ElSlider,
   // ElStep,
   // ElSteps,
@@ -81,7 +87,7 @@ import {
   // ElTree,
   // ElUpload,
   // ElInfiniteScroll,
-  // ElLoading,
+  ElLoading,
   ElMessage,
   ElMessageBox,
   // ElNotification,
@@ -114,7 +120,7 @@ const components: any = [
   // ElColorPicker,
   ElContainer,
   // ElDatePicker,
-  // ElDialog,
+  ElDialog,
   // ElDivider,
   // ElDrawer,
   // ElDropdown,
@@ -133,10 +139,10 @@ const components: any = [
   ElMenu,
   ElMenuItem,
   ElMenuItemGroup,
-  // ElOption,
+  ElOption,
   // ElOptionGroup,
   // ElPageHeader,
-  // ElPagination,
+  ElPagination,
   // ElPopconfirm,
   // ElPopover,
   ElPopper,
@@ -147,7 +153,7 @@ const components: any = [
   // ElRate,
   ElRow,
   // ElScrollbar,
-  // ElSelect,
+  ElSelect,
   // ElSlider,
   // ElStep,
   // ElSteps,
@@ -170,7 +176,7 @@ const components: any = [
 
 const plugins: any = [
   // ElInfiniteScroll,
-  // ElLoading,
+  ElLoading,
   ElMessage,
   ElMessageBox,
   // ElNotification,

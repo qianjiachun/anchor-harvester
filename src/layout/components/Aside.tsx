@@ -13,7 +13,6 @@ export default defineComponent({
         const onclickMenuSelect = (index: string) => {
             switch (index) {
                 case "斗鱼":
-                    console.log("哈哈")
                     router.push("/douyu");
                     break;
                 case "虎牙":
