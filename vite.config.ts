@@ -14,7 +14,7 @@ export default defineConfig(
       }
     },
     plugins: [
-      vue(), 
+      vue(),
       vueJsx(),
       styleImport({
         libs: [{
@@ -31,6 +31,9 @@ export default defineConfig(
         }]
       })
     ],
+    build: {
+      chunkSizeWarningLimit: 10000
+    },
     server: {
       port: 1015,
       proxy: {

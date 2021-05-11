@@ -2,10 +2,9 @@
 import 'element-plus/packages/theme-chalk/src/base.scss'
 
 // 使用中文
-import { locale } from "element-plus"
-import lang from 'element-plus/lib/locale/lang/zh-cn'
-import 'dayjs/locale/zh-cn'
-locale(lang)
+// import { locale } from "element-plus"
+// import lang from 'element-plus/lib/locale/lang/zh-cn'
+// locale(lang)
 
 import {
   // ElAlert,
