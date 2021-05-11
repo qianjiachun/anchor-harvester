@@ -67,11 +67,11 @@ export default defineComponent({
         }
 
         const onClickLiveRoom = (rid: string) => {
-            window.open("https://www.douyu.com/" + rid);
+            window.open("https://www.huya.com/" + rid);
         }
         
         const onClickToubang = (rid: string) => {
-            window.open(`http://www.toubang.tv/anchor/1_${rid}.html`);
+            window.open(`http://www.toubang.tv/anchor/3_${rid}.html`);
         }
 
         const onClickZaikan = (rid: string) => {
@@ -82,7 +82,6 @@ export default defineComponent({
             return (<>
                 <el-button type="warning" size="mini" onClick={() => {onClickLiveRoom(scope.row.rid)}}>去直播间</el-button>
                 <el-button type="success" size="mini" onClick={() => {onClickToubang(scope.row.rid)}}>头榜数据</el-button>
-                <el-button type="info" size="mini" onClick={() => {onClickZaikan(scope.row.rid)}}>在看数据</el-button>
             </>)
         }
         onMounted(() => {
