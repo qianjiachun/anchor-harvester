@@ -37,7 +37,7 @@ export default defineComponent({
                 temp.push(zone1, zone2, item.rid, item.nn, item.uid, item.gender, item.title, item.notice, item.fans, item.hot, item.week_barrage_num, item.week_gift_price, item.update_time);
                 body.push(temp);
             }
-            exportJsonToExcel(`【${zone1}-${zone2}】未入会主播名单`, header, body);
+            exportJsonToExcel(`【斗鱼】【${zone1}-${zone2}】未入会主播名单`, header, body);
         }
 
         const onClickLiveRoom = (rid: string) => {

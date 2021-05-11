@@ -42,5 +42,6 @@ export function getTaskDetail(data: ITaskData) {
     return request({
         url: "/douyu/getTaskDetail",
         method: 'POST',
+        data: data
     })
 }

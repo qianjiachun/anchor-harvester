@@ -29,15 +29,15 @@ export default defineComponent({
         const exportExcel = () => {
             // const excelName='人员信息表'
             // excel.export_json_to_excel(["haha","123"], [[1,2],[33,22],[33,22]], excelName)
-            let header = ["分区1", "分区2", "房间号", "昵称", "UID", "性别", "直播间标题", "直播间公告", "关注数", "热度", "周弹幕人数", "周流水", "最后更新时间"];
+            let header = ["分区", "房间号", "昵称", "UID", "性别", "直播间标题", "直播间公告", "关注数", "热度", "周弹幕人数", "周流水", "最后更新时间"];
             let body: any = [];
             for (let i = 0; i < tableData.value.length; i++) {
                 let item = tableData.value[i];
                 let temp = [];
-                temp.push(zone1, zone2, item.rid, item.nn, item.uid, item.gender, item.title, item.notice, item.fans, item.hot, item.week_barrage_num, item.week_gift_price, item.update_time);
+                temp.push(zone1, item.rid, item.nn, item.uid, item.gender, item.title, item.notice, item.fans, item.hot, item.week_barrage_num, item.week_gift_price, item.update_time);
                 body.push(temp);
             }
-            exportJsonToExcel(`【${zone1}-${zone2}】未入会主播名单`, header, body);
+            exportJsonToExcel(`【企鹅电竞】【${zone1}】未入会主播名单`, header, body);
         }
 
         const onClickLiveRoom = (rid: string) => {

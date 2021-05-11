@@ -36,5 +36,6 @@ export function getTaskDetail(data: ITaskData) {
     return request({
         url: "/huya/getTaskDetail",
         method: 'POST',
+        data: data
     })
 }

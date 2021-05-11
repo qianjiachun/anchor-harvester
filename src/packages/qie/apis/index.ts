@@ -3,14 +3,14 @@ import {ITaskData, IDeleteTaskData, ITaskDetail} from "../interfaces"
 
 export function getTaskList() {
     return request({
-        url: "/huya/getTaskList",
+        url: "/qie/getTaskList",
         method: 'GET',
     })
 }
 
 export function addTask(data: ITaskData) {
     return request({
-        url: "/huya/addTask",
+        url: "/qie/addTask",
         method: 'POST',
         data: data
     })
@@ -18,7 +18,7 @@ export function addTask(data: ITaskData) {
 
 export function deleteTask(data: IDeleteTaskData) {
     return request({
-        url: "/huya/deleteTask",
+        url: "/qie/deleteTask",
         method: 'POST',
         data: data
     })
@@ -26,7 +26,7 @@ export function deleteTask(data: IDeleteTaskData) {
 
 export function getZone() {
     return request({
-        url: "/huya/getZone",
+        url: "/qie/getZone",
         method: 'GET',
     })
 }
@@ -34,7 +34,7 @@ export function getZone() {
 
 export function getTaskDetail(data: ITaskData) {
     return request({
-        url: "/huya/getTaskDetail",
+        url: "/qie/getTaskDetail",
         method: 'POST',
     })
 }

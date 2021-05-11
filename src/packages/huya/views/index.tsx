@@ -46,7 +46,7 @@ export default defineComponent({
 
         const onClickConfirmAddTask = () => {
             let platfrom = "虎牙";
-            if (!selectZone1.value || !selectZone2.value) {
+            if (!selectZone1.value) {
                 ElMessageBox({ type: "warning", title: "提示", message: "请选择分区" });
                 return;
             }
@@ -105,8 +105,8 @@ export default defineComponent({
                     <el-table-column label="序号" v-slots={{
                         default: (scope: any) => scope.$index + 1
                     }} width="60" align="center"></el-table-column>
-                    <el-table-column prop="zone1" label="分区1" align="center"></el-table-column>
-                    <el-table-column prop="zone2" label="分区2" align="center"></el-table-column>
+                    <el-table-column prop="zone1" label="分区" align="center"></el-table-column>
+                    {/* <el-table-column prop="zone2" label="分区2" align="center"></el-table-column> */}
                     <el-table-column sortable prop="anchor_num" label="未入会主播数" align="center"></el-table-column>
                     <el-table-column sortable prop="update_time" label="最后更新时间" align="center"></el-table-column>
                     <el-table-column label="操作" min-width="150" align="center" v-slots={{
@@ -117,12 +117,8 @@ export default defineComponent({
                 <el-dialog title="新增任务" v-model={isDialogShow.value} width="300px" v-slots={{
                     footer: renderDialogFooter
                 }}>
-                    <el-select v-model={selectZone1.value} placeholder="请选择分区1" style="margin-bottom:15px">
+                    <el-select v-model={selectZone1.value} placeholder="请选择分区">
                         {zone1Data.value.map((item: any) => <el-option key={item.id} label={item.name} value={item.id}></el-option>)}
-                    </el-select>
-                    <br/>
-                    <el-select v-model={selectZone2.value} placeholder="请选择分区2">
-                        {zone2Data.value.map((item: any) => <el-option key={item.id} label={item.name} value={item.id}></el-option>)}
                     </el-select>
                 </el-dialog>
             </>

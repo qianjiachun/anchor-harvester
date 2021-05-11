@@ -10,6 +10,7 @@ export interface ITask {
 
 export interface ITaskData {
     // 新增任务
+    type?: number, // 0 全部 1 非铂金
     platform: string,
     zone1_id: string,
     zone2_id: string
