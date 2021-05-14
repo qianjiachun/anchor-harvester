@@ -119,11 +119,11 @@ export default defineComponent({
                 <el-dialog title="新增任务" v-model={isDialogShow.value} width="300px" v-slots={{
                     footer: renderDialogFooter
                 }}>
-                    <el-select v-model={selectZone1.value} placeholder="请选择分区1" style="margin-bottom:15px">
+                    <el-select filterable v-model={selectZone1.value} placeholder="请选择分区1" style="margin-bottom:15px">
                         {zone1Data.value.map((item: any) => <el-option key={item.id} label={item.name} value={item.id}></el-option>)}
                     </el-select>
                     <br/>
-                    <el-select v-model={selectZone2.value} placeholder="请选择分区2">
+                    <el-select filterable v-model={selectZone2.value} placeholder="请选择分区2">
                         {zone2Data.value.map((item: any) => <el-option key={item.id} label={item.name} value={item.id}></el-option>)}
                     </el-select>
                 </el-dialog>
